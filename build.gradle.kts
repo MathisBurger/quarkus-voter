@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation("io.quarkus:quarkus-kotlin")
+    implementation("io.quarkus:quarkus-arc:3.7.4+")
+    implementation("io.quarkus:quarkus-kotlin:3.7.4+")
     testImplementation(kotlin("test"))
 }
 

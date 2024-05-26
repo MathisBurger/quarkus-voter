@@ -14,7 +14,7 @@ interface VoterInterface {
      * @param attributeName The attribute like a role or so
      * @param value The value that should be voted on
      */
-    fun <T : Any> voteOnAttribute(user: UserPrincipal?, attributeName: String, value: T): Boolean;
+    fun <T : Votable> voteOnAttribute(user: AuthInterface?, attributeName: String, value: T): Boolean;
 
     /**
      * Gets the type that is voted on
