@@ -6,7 +6,7 @@ import jakarta.inject.Inject
 /**
  * Security service that handles access grants and denies
  */
-abstract class AbstractSecurityService @Inject constructor(registeredVoters: Instance<VoterInterface>) {
+abstract class AbstractSecurityService constructor(registeredVoters: Instance<VoterInterface>) {
 
     private val voterMap: HashMap<String, VoterInterface> = HashMap();
 
@@ -17,7 +17,7 @@ abstract class AbstractSecurityService @Inject constructor(registeredVoters: Ins
     /**
      * Checks if the current auth object is granted on a specific action
      */
-    fun isGranted(attribute: String, entity: Votable?): Boolean {
+    fun isGranted(attribute: String, entity: Votable? = null): Boolean {
         // Get auth object and return unauthorized (false) if is null
         val authObject = this.getCurrentAuthObject() ?: return false;
 
