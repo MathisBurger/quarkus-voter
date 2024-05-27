@@ -17,7 +17,7 @@ abstract class AbstractSecurityService constructor(registeredVoters: Instance<Vo
     /**
      * Checks if the current auth object is granted on a specific action
      */
-    fun isGranted(attribute: String, entity: Votable? = null): Boolean {
+    final fun isGranted(attribute: String, entity: Votable? = null): Boolean {
         // Get auth object and return unauthorized (false) if is null
         val authObject = this.getCurrentAuthObject() ?: return false;
 
